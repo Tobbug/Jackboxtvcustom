@@ -20212,7 +20212,7 @@ let Iy = class {
     );
   }
   getS3Url(t, n) {
-    return `${window.location.origin}/${n}/${t}`;
+    return `${window.location.origin}${window.tvBasePath ?? ""}/${n}/${t}`;
   }
   async loadHMRBundle(t) {
     const n = t.file;
@@ -20623,7 +20623,11 @@ class $y {
       (i.hashString || (i.hashString = n.hashString),
       i.params || (i.params = n.params),
       i.queryString || (i.queryString = n.queryString)),
-      window.history.replaceState(null, "", t),
+      window.history.replaceState(
+        null,
+        "",
+        `${window.tvBasePath ?? ""}${t}`
+      ),
       this.executeMatch(i);
   }
   getSite() {
@@ -20674,14 +20678,19 @@ class $y {
   }
   getMatch(t) {
     const n = this.getSite(),
-      i = this.getRoute(t, n.routes);
+      basePath = window.tvBasePath,
+      f =
+        basePath && (t === basePath || t.startsWith(`${basePath}/`))
+          ? t.slice(basePath.length) || "/"
+          : t,
+      i = this.getRoute(f, n.routes);
     if (!i) return null;
     const s = {
       url: document.location.href,
       route: i.route,
       path: i.parts.join("/"),
       parts: i.parts,
-      data: this.parseData(t, i),
+      data: this.parseData(f, i),
       params: this.parseParams(),
     };
     if (document.location.hash) {

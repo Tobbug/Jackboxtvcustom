@@ -47269,7 +47269,8 @@ function rj(r, e, n, i, s, a) {
               "div",
               { class: $r(["center", r.graphicClass]) },
               [
-                e[2] || (e[2] = De("div", { class: "logo" }, null, -1)),
+                e[2] ||
+                  (e[2] = De("div", { class: "logo" }, "TobboxGame.TV", -1)),
                 r.graphicClass ? (He(), Ye("div", ZX)) : It("", !0),
               ],
               2,
@@ -47428,7 +47429,6 @@ function lj(r, e, n, i, s, a) {
   const t = zr("Fatal"),
     u = zr("TopBar"),
     f = zr("Connect"),
-    p = zr("SlideBanner"),
     c = zr("RecentGames"),
     h = zr("Modal");
   return r.shouldShowFatal
@@ -47469,7 +47469,6 @@ function lj(r, e, n, i, s, a) {
                 8,
                 ["match", "twitch-user", "onTwitchLoginWasClicked"],
               ),
-              $t(p),
               r.recentGames.length
                 ? It("", !0)
                 : (He(), Ye("a", oj, ht(r.$t("HOMEPAGE_LINK")), 1)),

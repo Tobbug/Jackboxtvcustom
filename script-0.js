@@ -2447,7 +2447,7 @@ function G0() {
       this.storage === o.localStorage
         ? ((a = o.cookie.parse(this.name)),
           o.cookie.remove(this.name),
-          o.cookie.remove(this.name, !0),
+          o.cookie.remove(this.name, this.cross_subdomain, this.cookie_domain),
           a && this.register_once(a))
         : this.storage === o.cookie &&
           ((u = o.localStorage.parse(this.name)),

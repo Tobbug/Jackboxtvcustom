@@ -3760,7 +3760,10 @@ class j0 {
   }
   setup() {
     pf("config", "G-V1QJVQMYF1", { send_page_view: !1 }),
-      cf.init("2e284873b7269f13b850ac994abfd848", { debug: "false" }),
+      cf.init("2e284873b7269f13b850ac994abfd848", {
+        debug: "false",
+        cross_subdomain_cookie: false,
+      }),
       delete window.tv.analytics,
       (window.tv.analytics = this),
       (this.isSetup = !0);
@@ -21174,4 +21177,3 @@ new j0().setup();
 Vr.setup();
 Py();
 new $y([Xy, jy]);
-//# sourceMappingURL=KMQ6yrBj.js.map

@@ -3763,6 +3763,7 @@ class j0 {
       cf.init("2e284873b7269f13b850ac994abfd848", {
         debug: "false",
         cross_subdomain_cookie: false,
+        persistence: "localStorage",
       }),
       delete window.tv.analytics,
       (window.tv.analytics = this),
